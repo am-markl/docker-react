@@ -15,4 +15,6 @@ RUN npm run build
 
 #Now start the run build phase assuming that the image is already built into /app/build
 FROM nginx
+#expose the port for port mapping
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
